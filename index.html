@@ -260,11 +260,20 @@
                     $dialog2.dialog("open");
                 });
 
-				$("#sliderH, #sliderL, #sliderF").slider({
+				$("#sliderH, #sliderF").slider({
 					orientation : "horizontal",
 					range : "min",
 					max : 100,
 					value : 10,
+					slide : refreshSwatch,
+					change : refreshSwatch
+				});
+				
+				$("#sliderL").slider({
+					orientation : "horizontal",
+					range : "min",
+					max : 15,
+					value : 1,
 					slide : refreshSwatch,
 					change : refreshSwatch
 				});
