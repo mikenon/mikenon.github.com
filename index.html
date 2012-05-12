@@ -315,20 +315,21 @@
 		<script type="text/javascript">
             Downloadify.create('downloadify', {
                 filename: function(){
-                    return $("#finName").val() + ".yml";
+                    return $("#finName").html() + ".yml";
                 },
                 data: function(){ 
                     var filetext =  'block:\n' +
                                     '    name: ' + $("#finName").html() + '\n' +
-                                    '    texture: ' + $("#finTexture").html() + '\n' +
-                                    '    hardness: ' + $("#finHardness").html() + '\n' +
-                                    '    lightlevel: ' + $("#finLight").html() + '\n' +
-                                    '    friction: ' + $("#finFriction").html() + '\n' +
-                                    '    vanillablock: ' + $("#finVanilla").html() + '\n' +
-                                    '    recipe: ' + $("#finRecipe").html() + '\n' +
-                                    '    action:\n' +
-                                    '        click: ' + $("#finClick").html() + '\n' +
-                                    '        command: ' +$("#finCommand").html() + '\n';
+                                    '    texture: ' + $("#finTexture").html();
+                    filetext += ($("#finHardness").html() == '')    ? '' : '\n    hardness: '     + $("#finHardness").html();
+                    filetext += ($("#finLight").html() == '')       ? '' : '\n    lightlevel: '   + $("#finLight").html();
+                    filetext += ($("#finFriction").html() == '')    ? '' : '\n    finFriction: '  + $("#finFriction").html();
+                    filetext += ($("#finVanilla").html() == '')     ? '' : '\n    vanillablock: ' + $("#finVanilla").html();
+                    filetext += ($("#finRecipe").html() == '')      ? '' : '\n    recipe: '       + $("#finRecipe").html();
+                    filetext += ($("#finClick").html() == $("#finCommand").html()) ? '' : 
+                                                             '\n    action:' +
+                                                             '\n        click: '  + $("#finClick").html() +
+                                                             '\n        command: ' + $("#finCommand").html();
                     return filetext;
                 },
                 transparent : false,
