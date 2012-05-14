@@ -25,8 +25,8 @@
         <script src="http://mikenon.github.com/google-code-prettify/prettify.js" type="text/javascript"></script>
         <script src="http://mikenon.github.com/bootstrap/js/bootstrap-tooltip.js"></script>
         <script src="http://mikenon.github.com/bootstrap/js/bootstrap-popover.js"></script>
-        <script src="http://legpit.com/bootstrap/js/bootstrap-collapse.js"></script>
-        <script src="http://legpit.com/bootstrap/js/bootstrap-dropdown.js"></script>
+        <script src="http://mikenon.github.com/bootstrap/js/bootstrap-collapse.js"></script>
+        <script src="http://mikenon.github.com/bootstrap/js/bootstrap-dropdown.js"></script>
     </head>
 	<body>
 		<div class="navbar navbar-fixed-top">
@@ -79,6 +79,321 @@
 							<legend>
 								Create a plugin config
 							</legend>
+							
+							<!-- Features -->
+							<div class="control-group">
+								<label class="control-label">Use Economy</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" value="true" id="radioEconomyTrue" name="radioEconomy"/>
+										Yes </label>
+									<label class="radio">
+										<input type="radio" value="false" id="radioEconomyFalse" name="radioEconomy"/>
+										No </label>
+									<p class="help-block">
+										If Yes the economy features of Digilock will be enabled. 
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Respect War Plugin Rules</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" value="true" id="radioWarTrue" name="radioWar"/>
+										Yes </label>
+									<label class="radio">
+										<input type="radio" value="false" id="radioWarFalse" name="radioWar"/>
+										No </label>
+									<p class="help-block">
+										Requires <a target="_blank" href="http://forums.bukkit.org/threads/mech-fun-war-v1-7-1-doolittle-minecraft-pvp-arenas-tdm-ctf-more-1-2-5-r1.250/">War</a>
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Respect MobArena Plugin Rules</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" value="true" id="radioMobArenaTrue" name="radioMobArena"/>
+										Yes </label>
+									<label class="radio">
+										<input type="radio" value="false" id="radioMobArenaFalse" name="radioMobArena"/>
+										No </label>
+									<p class="help-block">
+										Requires <a target="_blank" href="http://dev.bukkit.org/server-mods/mobarena/">MobArena</a>
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Respect Jail Plugin Rules</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" value="true" id="radioJailTrue" name="radioJail"/>
+										Yes </label>
+									<label class="radio">
+										<input type="radio" value="false" id="radioJailFalse" name="radioJail"/>
+										No </label>
+									<p class="help-block">
+										Requires <a target="_blank" href="http://dev.bukkit.org/server-mods/jail/">Jail</a>
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Respect Residence Plugin Rules</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" value="true" id="radioResidenceTrue" name="radioResidence"/>
+										Yes </label>
+									<label class="radio">
+										<input type="radio" value="false" id="radioResidenceFalse" name="radioResidence"/>
+										No </label>
+									<p class="help-block">
+										Requires <a target="_blank" href="http://dev.bukkit.org/server-mods/residence/">Residence</a>
+									</p>
+								</div>
+							</div>
+							
+							<!-- GUI -->
+							<div class="control-group">
+								<label for="selectClick" class="control-label">Key Binding</label>
+								<div class="controls">
+									<select id="selectClick">
+										<option selected value="nogood">Please Select...</option>
+										<option value="CHAR_NONE">CHAR_NONE</option>
+										<option value="KEY_0">KEY_0</option>
+										<option value="KEY_1">KEY_1</option>
+										<option value="KEY_2">KEY_2</option>
+										<option value="KEY_3">KEY_3</option>
+										<option value="KEY_4">KEY_4</option>
+										<option value="KEY_5">KEY_5</option>
+										<option value="KEY_6">KEY_6</option>
+										<option value="KEY_7">KEY_7</option>
+										<option value="KEY_8">KEY_8</option>
+										<option value="KEY_9">KEY_9</option>
+										<option value="KEY_A">KEY_A</option>
+										<option value="KEY_ADD">KEY_ADD</option>
+										<option value="KEY_APOSTROPHE">KEY_APOSTROPHE</option>
+										<option value="KEY_APPS">KEY_APPS</option>
+										<option value="KEY_AT">KEY_AT</option>
+										<option value="KEY_AX">KEY_AX</option>
+										<option value="KEY_B">KEY_B</option>
+										<option value="KEY_BACK">KEY_BACK</option>
+										<option value="KEY_BACKSLASH">KEY_BACKSLASH</option>
+										<option value="KEY_C">KEY_C</option>
+										<option value="KEY_CAPITAL">KEY_CAPITAL</option>
+										<option value="KEY_CIRCUMFLEX">KEY_CIRCUMFLEX</option>
+										<option value="KEY_COLON">KEY_COLON</option>
+										<option value="KEY_COMMA">KEY_COMMA</option>
+										<option value="KEY_CONVERT">KEY_CONVERT</option>
+										<option value="KEY_D">KEY_D</option>
+										<option value="KEY_DECIMAL">KEY_DECIMAL</option>
+										<option value="KEY_DELETE">KEY_DELETE</option>
+										<option value="KEY_DIVIDE">KEY_DIVIDE</option>
+										<option value="KEY_DOWN">KEY_DOWN</option>
+										<option value="KEY_E">KEY_E</option>
+										<option value="KEY_END">KEY_END</option>
+										<option value="KEY_EQUALS">KEY_EQUALS</option>
+										<option value="KEY_ESCAPE">KEY_ESCAPE</option>
+										<option value="KEY_F">KEY_F</option>
+										<option value="KEY_F1">KEY_F1</option>
+										<option value="KEY_F10">KEY_F10</option>
+										<option value="KEY_F11">KEY_F11</option>
+										<option value="KEY_F12">KEY_F12</option>
+										<option value="KEY_F13">KEY_F13</option>
+										<option value="KEY_F14">KEY_F14</option>
+										<option value="KEY_F15">KEY_F15</option>
+										<option value="KEY_F2">KEY_F2</option>
+										<option value="KEY_F3">KEY_F3</option>
+										<option value="KEY_F4">KEY_F4</option>
+										<option value="KEY_F5">KEY_F5</option>
+										<option value="KEY_F6">KEY_F6</option>
+										<option value="KEY_F7">KEY_F7</option>
+										<option value="KEY_F8">KEY_F8</option>
+										<option value="KEY_F9">KEY_F9</option>
+										<option value="KEY_G">KEY_G</option>
+										<option value="KEY_GRAVE">KEY_GRAVE</option>
+										<option value="KEY_H">KEY_H</option>
+										<option value="KEY_HOME">KEY_HOME</option>
+										<option value="KEY_I">KEY_I</option>
+										<option value="KEY_INSERT">KEY_INSERT</option>
+										<option value="KEY_J">KEY_J</option>
+										<option value="KEY_K">KEY_K</option>
+										<option value="KEY_KANA">KEY_KANA</option>
+										<option value="KEY_KANJI">KEY_KANJI</option>
+										<option value="KEY_L">KEY_L</option>
+										<option value="KEY_LBRACKET">KEY_LBRACKET</option>
+										<option value="KEY_LCONTROL">KEY_LCONTROL</option>
+										<option value="KEY_LEFT">KEY_LEFT</option>
+										<option value="KEY_LMENU">KEY_LMENU</option>
+										<option value="KEY_LMETA">KEY_LMETA</option>
+										<option value="KEY_LSHIFT">KEY_LSHIFT</option>
+										<option value="KEY_LWIN">KEY_LWIN</option>
+										<option value="KEY_M">KEY_M</option>
+										<option value="KEY_MINUS">KEY_MINUS</option>
+										<option value="KEY_MULTIPLY">KEY_MULTIPLY</option>
+										<option value="KEY_N">KEY_N</option>
+										<option value="KEY_NEXT">KEY_NEXT</option>
+										<option value="KEY_NOCONVERT">KEY_NOCONVERT</option>
+										<option value="KEY_NONE">KEY_NONE</option>
+										<option value="KEY_NUMLOCK">KEY_NUMLOCK</option>
+										<option value="KEY_NUMPAD0">KEY_NUMPAD0</option>
+										<option value="KEY_NUMPAD1">KEY_NUMPAD1</option>
+										<option value="KEY_NUMPAD2">KEY_NUMPAD2</option>
+										<option value="KEY_NUMPAD3">KEY_NUMPAD3</option>
+										<option value="KEY_NUMPAD4">KEY_NUMPAD4</option>
+										<option value="KEY_NUMPAD5">KEY_NUMPAD5</option>
+										<option value="KEY_NUMPAD6">KEY_NUMPAD6</option>
+										<option value="KEY_NUMPAD7">KEY_NUMPAD7</option>
+										<option value="KEY_NUMPAD8">KEY_NUMPAD8</option>
+										<option value="KEY_NUMPAD9">KEY_NUMPAD9</option>
+										<option value="KEY_NUMPADCOMMA">KEY_NUMPADCOMMA</option>
+										<option value="KEY_NUMPADENTER">KEY_NUMPADENTER</option>
+										<option value="KEY_NUMPADEQUALS">KEY_NUMPADEQUALS</option>
+										<option value="KEY_O">KEY_O</option>
+										<option value="KEY_P">KEY_P</option>
+										<option value="KEY_PAUSE">KEY_PAUSE</option>
+										<option value="KEY_PERIOD">KEY_PERIOD</option>
+										<option value="KEY_POWER">KEY_POWER</option>
+										<option value="KEY_PRIOR">KEY_PRIOR</option>
+										<option value="KEY_Q">KEY_Q</option>
+										<option value="KEY_R">KEY_R</option>
+										<option value="KEY_RBRACKET">KEY_RBRACKET</option>
+										<option value="KEY_RCONTROL">KEY_RCONTROL</option>
+										<option value="KEY_RETURN">KEY_RETURN</option>
+										<option value="KEY_RIGHT">KEY_RIGHT</option>
+										<option value="KEY_RMENU">KEY_RMENU</option>
+										<option value="KEY_RMETA">KEY_RMETA</option>
+										<option value="KEY_RSHIFT">KEY_RSHIFT</option>
+										<option value="KEY_RWIN">KEY_RWIN</option>
+										<option value="KEY_S">KEY_S</option>
+										<option value="KEY_SCROLL">KEY_SCROLL</option>
+										<option value="KEY_SEMICOLON">KEY_SEMICOLON</option>
+										<option value="KEY_SLASH">KEY_SLASH</option>
+										<option value="KEY_SLEEP">KEY_SLEEP</option>
+										<option value="KEY_SPACE">KEY_SPACE</option>
+										<option value="KEY_STOP">KEY_STOP</option>
+										<option value="KEY_SUBTRACT">KEY_SUBTRACT</option>
+										<option value="KEY_SYSRQ">KEY_SYSRQ</option>
+										<option value="KEY_T">KEY_T</option>
+										<option value="KEY_TAB">KEY_TAB</option>
+										<option value="KEY_U">KEY_U</option>
+										<option value="KEY_UNDERLINE">KEY_UNDERLINE</option>
+										<option value="KEY_UNKNOWN">KEY_UNKNOWN</option>
+										<option value="KEY_UNLABELED">KEY_UNLABELED</option>
+										<option value="KEY_UP">KEY_UP</option>
+										<option value="KEY_V">KEY_V</option>
+										<option value="KEY_W">KEY_W</option>
+										<option value="KEY_X">KEY_X</option>
+										<option value="KEY_Y">KEY_Y</option>
+										<option value="KEY_YEN">KEY_YEN</option>
+										<option value="KEY_Z">KEY_Z</option>
+										<option value="KEYBOARD_SIZE">KEYBOARD_SIZE</option>
+									</select>
+									<p class="help-block">
+										If you want combo keys you'll have to edit the file, for now.<br>
+										Not all of these keys are likely to exist on your keyboard
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Allow Sign Editor GUI</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" value="true" id="radioSignGuiTrue" name="radioSignGui"/>
+										Yes </label>
+									<label class="radio">
+										<input type="radio" value="false" id="radioSignGuiFalse" name="radioSignGui"/>
+										No </label>
+									<p class="help-block">
+										Also requires the digilock.signedit permission
+									</p>
+								</div>
+							</div>
+							
+							<!-- Storage -->
+							<div id="tabsCmd">
+								<ul>
+									<li>
+										<a href="#tabsDB-1">SQLite</a>
+									</li>
+									<li>
+										<a href="#tabsDB-2">MySQL</a>
+									</li>
+								</ul>
+								<div id="tabsDB-1">
+									<div class="control-group">
+										<p class="help-block">
+											A SQLite Database will be used
+										</p>
+									</div>
+								</div>
+								<div id="tabsDB-2">
+									<div class="control-group">
+										<label class="control-label" for="inputMysqlHost">MySQL Host</label>
+										<div class="controls">
+											<input type="text" class="input-xlarge" name="inputMysqlHost" id="inputMysqlHost">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="inputMysqlPort">MySQL Port</label>
+										<div class="controls">
+											<input type="text" class="input-mini" name="inputMysqlPort" id="inputMysqlPort">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="inputMysqlDatabase">MySQL Database</label>
+										<div class="controls">
+											<input type="text" class="input-xlarge" name="inputMysqlDatabase" id="inputMysqlDatabase">
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="inputMysqlUsername">MySQL Username</label>
+										<div class="controls">
+											<input type="text" class="input-xlarge" name="inputMysqlUsername" id="inputMysqlUsername">
+											<p class="help-block">
+												Absolutely no remote calls are made from this page.
+											</p>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="inputMysqlDatabase">MySQL Password</label>
+										<div class="controls">
+											<input type="text" class="input-xlarge" name="inputMysqlDatabase" id="inputMysqlDatabase">
+											<p class="help-block">
+												Absolutely no remote calls are made from this page.
+											</p>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="inputAction">Command</label>
+										<div class="controls">
+											<div class="input-prepend">
+												<span class="add-on">/</span>
+												<input type="text" name="inputAction" class="input-xlarge" id="inputAction">
+											</div>
+											<p class="help-block">
+												This command will be run as configured above when you click with the item
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							
+							<!-- Lock -->
+							<div class="control-group">
+								<label class="control-label">Play a Sound</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" value="true" id="radioPlaySoundTrue" name="radioPlaySound"/>
+										Yes </label>
+									<label class="radio">
+										<input type="radio" value="false" id="radioPlaySoundFalse" name="radioPlaySound"/>
+										No </label>
+									<p class="help-block">
+										Be sure to specify a URL below
+									</p>
+								</div>
+							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputName">Item Name</label>
 								<div class="controls">
