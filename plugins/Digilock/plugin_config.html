@@ -424,7 +424,121 @@
 									</p>
 								</div>
 							</div>
-							
+							<div class="control-group">
+								<label class="control-label" for="inputName">Item Name</label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="inputName" id="inputName">
+									<p class="help-block">
+										In-game name of the item
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputLink">Texture Link</label>
+								<div class="controls">
+									<div class="input-prepend">
+										<span class="add-on">http://</span>
+										<input type="text" name="inputLink" class="input-xlarge" id="inputLink">
+									</div>
+									<p class="help-block">
+										A web address pointing to the texture you want
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="selectClick" class="control-label">Click</label>
+								<div class="controls">
+									<select id="selectClick">
+										<option selected value="nogood">Please Select...</option>
+										<option value="lefta">Left Click Air</option>
+										<option value="leftb">Left Click Block</option>
+										<option value="righta">Right Click Air</option>
+										<option value="rightb">Right Click Block</option>
+									</select>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="sliderRH" class="control-label">Restore Health</label>
+								<div class="controls">
+									<div class="formSlider" id="sliderRH" name="slideRrH"></div><span id="spanSlideRH">1</span>
+									<p class="help-block">
+										The number of hearts to restore. <a data-content='2 = 1 <i class="icon-heart"></i><br>10 = 5 <i class="icon-heart"></i><br>20 = 10 <i class="icon-heart"></i>' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Restore Health"><i class="icon-question-sign icon-white"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="inputDamage" class="control-label">Damage Dealt</label>
+								<div class="controls">
+									<input type="text" id="inputDamage" name="inputDamage" class="input-mini"/>
+									<p class="help-block">
+										The amount of damage to inflict on the entity hit. <a data-content='Same as hearts in restore health.<br>1 damages entity by half a heart.<br>40 could kill an unarmored player twice.' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Damage Dealt"><i class="icon-question-sign icon-white"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputMessage">Message</label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="inputMessage" id="inputMessage">
+									<p class="help-block">
+										This is sent to the player when the item is used
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Consume Item</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" value="true" id="radioConsumeTrue" name="radioClick"/>
+										Yes </label>
+									<label class="radio">
+										<input type="radio" value="false" id="radioConsumeFalse" name="radioClick"/>
+										No </label>
+									<p class="help-block">
+										If Yes the item will be removed when used. 
+										<a data-content='If No the item will last forever.' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Consume Item"><i class="icon-question-sign icon-white"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputCape">Wear Cape</label>
+								<div class="controls">
+									<div class="input-prepend">
+										<span class="add-on">http://</span>
+										<input type="text" name="inputCape" class="input-xlarge" id="inputCape">
+									</div>
+									<p class="help-block">
+										A web address pointing to the cape you want
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputSound">Play Sound</label>
+								<div class="controls">
+									<div class="input-prepend">
+										<span class="add-on">http://</span>
+										<input type="text" name="inputSound" class="input-xlarge" id="inputSound">
+									</div>
+									<p class="help-block">
+										A web address pointing to the sound you want to hear
+									</p>
+								</div>
+							</div>
+							<div id="tabsCmd">
+								<ul>
+									<li>
+										<a href="#tabsCmd-1">Command Disabled</a>
+									</li>
+									<li>
+										<a href="#tabsCmd-2">Command Enabled</a>
+									</li>
+								</ul>
+								<div id="tabsCmd-1">
+									<div class="control-group">
+										<p class="help-block">
+											Clicking the block will <b><i>not</i></b> run a command
+										</p>
+									</div>
+								</div>
 								<div id="tabsCmd-2">
 									<div class="control-group">
 										<label class="control-label">Command Origin</label>
