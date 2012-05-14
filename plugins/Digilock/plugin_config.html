@@ -355,31 +355,49 @@
 										</div>
 									</div>
 									<div class="control-group">
-										<label class="control-label" for="inputMysqlDatabase">MySQL Password</label>
+										<label class="control-label" for="inputMysqlPassword">MySQL Password</label>
 										<div class="controls">
-											<input type="text" class="input-xlarge" name="inputMysqlDatabase" id="inputMysqlDatabase">
+											<input type="text" class="input-xlarge" name="inputMysqlPassword" id="inputMysqlPassword">
 											<p class="help-block">
 												Absolutely no remote calls are made from this page.
-											</p>
-										</div>
-									</div>
-									<div class="control-group">
-										<label class="control-label" for="inputAction">Command</label>
-										<div class="controls">
-											<div class="input-prepend">
-												<span class="add-on">/</span>
-												<input type="text" name="inputAction" class="input-xlarge" id="inputAction">
-											</div>
-											<p class="help-block">
-												This command will be run as configured above when you click with the item
 											</p>
 										</div>
 									</div>
 								</div>
 							</div>
 							
-							
 							<!-- Lock -->
+							<div class="control-group">
+								<label class="control-label" for="inputCost">Lock Cost</label>
+								<div class="controls">
+									<input type="text" class="input-mini" name="inputCost" id="inputCost">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputMaxcost">Lock Max Cost</label>
+								<div class="controls">
+									<input type="text" class="input-mini" name="inputMaxcost" id="inputMaxcost">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputDestroycost">Lock Destroy Cost</label>
+								<div class="controls">
+									<input type="text" class="input-mini" name="inputDestroycost" id="inputDestroycost">
+									<p class="help-block">
+										Use a negative number to give a refund.
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputClosetimer">Auto Close Timer</label>
+								<div class="controls">
+									<input type="text" class="input-mini" name="inputClosetimer" id="inputClosetimer">
+									<p class="help-block">
+										This is the number of seconds the auto-close waits.<br>
+										Things like doors, trapdoors etc, will auto-close
+									</p>
+								</div>
+							</div>
 							<div class="control-group">
 								<label class="control-label">Play a Sound</label>
 								<div class="controls">
@@ -395,145 +413,17 @@
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label" for="inputName">Item Name</label>
-								<div class="controls">
-									<input type="text" class="input-xlarge" name="inputName" id="inputName">
-									<p class="help-block">
-										In-game name of the item
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputLink">Texture Link</label>
+								<label class="control-label" for="inputSoundUrl">Sound URL</label>
 								<div class="controls">
 									<div class="input-prepend">
 										<span class="add-on">http://</span>
-										<input type="text" name="inputLink" class="input-xlarge" id="inputLink">
+										<input type="text" name="inputSoundUrl" class="input-xlarge" id="inputSoundUrl">
 									</div>
 									<p class="help-block">
-										A web address pointing to the texture you want
+										A web address pointing to the sound you want
 									</p>
 								</div>
 							</div>
-							<div class="control-group">
-								<label for="selectClick" class="control-label">Click</label>
-								<div class="controls">
-									<select id="selectClick">
-										<option selected value="nogood">Please Select...</option>
-										<option value="lefta">Left Click Air</option>
-										<option value="leftb">Left Click Block</option>
-										<option value="righta">Right Click Air</option>
-										<option value="rightb">Right Click Block</option>
-									</select>
-								</div>
-							</div>
-							<div class="control-group">
-								<label for="sliderRH" class="control-label">Restore Health</label>
-								<div class="controls">
-									<div class="formSlider" id="sliderRH" name="slideRrH"></div><span id="spanSlideRH">1</span>
-									<p class="help-block">
-										The number of hearts to restore. <a data-content='2 = 1 <i class="icon-heart"></i><br>10 = 5 <i class="icon-heart"></i><br>20 = 10 <i class="icon-heart"></i>' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Restore Health"><i class="icon-question-sign icon-white"></i></a>
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label for="inputDamage" class="control-label">Damage Dealt</label>
-								<div class="controls">
-									<input type="text" id="inputDamage" name="inputDamage" class="input-mini"/>
-									<p class="help-block">
-										The amount of damage to inflict on the entity hit. <a data-content='Same as hearts in restore health.<br>1 damages entity by half a heart.<br>40 could kill an unarmored player twice.' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Damage Dealt"><i class="icon-question-sign icon-white"></i></a>
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputMessage">Message</label>
-								<div class="controls">
-									<input type="text" class="input-xlarge" name="inputMessage" id="inputMessage">
-									<p class="help-block">
-										This is sent to the player when the item is used
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Consume Item</label>
-								<div class="controls">
-									<label class="radio">
-										<input type="radio" value="true" id="radioConsumeTrue" name="radioClick"/>
-										Yes </label>
-									<label class="radio">
-										<input type="radio" value="false" id="radioConsumeFalse" name="radioClick"/>
-										No </label>
-									<p class="help-block">
-										If Yes the item will be removed when used. 
-										<a data-content='If No the item will last forever.' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Consume Item"><i class="icon-question-sign icon-white"></i></a>
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputCape">Wear Cape</label>
-								<div class="controls">
-									<div class="input-prepend">
-										<span class="add-on">http://</span>
-										<input type="text" name="inputCape" class="input-xlarge" id="inputCape">
-									</div>
-									<p class="help-block">
-										A web address pointing to the cape you want
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputSound">Play Sound</label>
-								<div class="controls">
-									<div class="input-prepend">
-										<span class="add-on">http://</span>
-										<input type="text" name="inputSound" class="input-xlarge" id="inputSound">
-									</div>
-									<p class="help-block">
-										A web address pointing to the sound you want to hear
-									</p>
-								</div>
-							</div>
-							<div id="tabsCmd">
-								<ul>
-									<li>
-										<a href="#tabsCmd-1">Command Disabled</a>
-									</li>
-									<li>
-										<a href="#tabsCmd-2">Command Enabled</a>
-									</li>
-								</ul>
-								<div id="tabsCmd-1">
-									<div class="control-group">
-										<p class="help-block">
-											Clicking the block will <b><i>not</i></b> run a command
-										</p>
-									</div>
-								</div>
-								<div id="tabsCmd-2">
-									<div class="control-group">
-										<label class="control-label">Command Origin</label>
-										<div class="controls">
-											<label class="radio">
-												<input type="radio" value="player" id="radioCmdPlayer" name="radioCmd"/>
-												Run as Player </label>
-											<label class="radio">
-												<input type="radio" value="console" id="radioCmdConsole" name="radioCmd"/>
-												Run as Console </label>
-										</div>
-									</div>
-									<div class="control-group">
-										<label class="control-label" for="inputAction">Command</label>
-										<div class="controls">
-											<div class="input-prepend">
-												<span class="add-on">/</span>
-												<input type="text" name="inputAction" class="input-xlarge" id="inputAction">
-											</div>
-											<p class="help-block">
-												This command will be run as configured above when you click with the item
-											</p>
-										</div>
-									</div>
-								</div>
 							</div>
 						</fieldset>
 					</form>
