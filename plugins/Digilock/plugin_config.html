@@ -81,6 +81,7 @@
 							</legend>
 							
 							<!-- Features -->
+							<h3>Feature Settings</h3>
 							<div class="control-group">
 								<label class="control-label">Use Economy</label>
 								<div class="controls">
@@ -153,10 +154,11 @@
 							</div>
 							
 							<!-- GUI -->
+							<h3>GUI Settings</h3>
 							<div class="control-group">
-								<label for="selectClick" class="control-label">Key Binding</label>
+								<label for="selectKeybinding" class="control-label">Lock Key Binding</label>
 								<div class="controls">
-									<select id="selectClick">
+									<select id="selectKeybinding">
 										<option selected value="nogood">Please Select...</option>
 										<option value="CHAR_NONE">CHAR_NONE</option>
 										<option value="KEY_0">KEY_0</option>
@@ -310,7 +312,8 @@
 							</div>
 							
 							<!-- Storage -->
-							<div id="tabsCmd">
+							<h3>Storage Settings</h3>
+							<div id="tabsDB">
 								<ul>
 									<li>
 										<a href="#tabsDB-1">SQLite</a>
@@ -350,7 +353,10 @@
 										<div class="controls">
 											<input type="text" class="input-xlarge" name="inputMysqlUsername" id="inputMysqlUsername">
 											<p class="help-block">
-												Absolutely no remote calls are made from this page.
+												While this page is designed to make no remote calls<br>
+												you agree to enter any sensitive information at your<br>
+												own risk. I assume no liability.<br>
+												When in doubt: leave this blank and edit the downloaded file.
 											</p>
 										</div>
 									</div>
@@ -359,7 +365,10 @@
 										<div class="controls">
 											<input type="text" class="input-xlarge" name="inputMysqlPassword" id="inputMysqlPassword">
 											<p class="help-block">
-												Absolutely no remote calls are made from this page.
+												While this page is designed to make no remote calls<br>
+												you agree to enter any sensitive information at your<br>
+												own risk. I assume no liability.<br>
+												When in doubt: leave this blank and edit the downloaded. 
 											</p>
 										</div>
 									</div>
@@ -367,22 +376,23 @@
 							</div>
 							
 							<!-- Lock -->
+							<h3>Lock Settings</h3>
 							<div class="control-group">
 								<label class="control-label" for="inputCost">Lock Cost</label>
 								<div class="controls">
-									<input type="text" class="input-mini" name="inputCost" id="inputCost">
+									<input type="text" class="input-mini" name="inputCost" id="inputCost" placeholder="100">
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputMaxcost">Lock Max Cost</label>
 								<div class="controls">
-									<input type="text" class="input-mini" name="inputMaxcost" id="inputMaxcost">
+									<input type="text" class="input-mini" name="inputMaxcost" id="inputMaxcost" placeholder="100">
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputDestroycost">Lock Destroy Cost</label>
 								<div class="controls">
-									<input type="text" class="input-mini" name="inputDestroycost" id="inputDestroycost">
+									<input type="text" class="input-mini" name="inputDestroycost" id="inputDestroycost" placeholder="-10">
 									<p class="help-block">
 										Use a negative number to give a refund.
 									</p>
@@ -391,7 +401,7 @@
 							<div class="control-group">
 								<label class="control-label" for="inputClosetimer">Auto Close Timer</label>
 								<div class="controls">
-									<input type="text" class="input-mini" name="inputClosetimer" id="inputClosetimer">
+									<input type="text" class="input-mini" name="inputClosetimer" id="inputClosetimer" placeholder="2">
 									<p class="help-block">
 										This is the number of seconds the auto-close waits.<br>
 										Things like doors, trapdoors etc, will auto-close
@@ -417,152 +427,11 @@
 								<div class="controls">
 									<div class="input-prepend">
 										<span class="add-on">http://</span>
-										<input type="text" name="inputSoundUrl" class="input-xlarge" id="inputSoundUrl">
+										<input type="text" name="inputSoundUrl" class="input-xlarge" id="inputSoundUrl" placeholder="http://dl.dropbox.com/u/36067670/BukkitInventoryTools/Sounds/Digilock.wav">
 									</div>
 									<p class="help-block">
 										A web address pointing to the sound you want
 									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputName">Item Name</label>
-								<div class="controls">
-									<input type="text" class="input-xlarge" name="inputName" id="inputName">
-									<p class="help-block">
-										In-game name of the item
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputLink">Texture Link</label>
-								<div class="controls">
-									<div class="input-prepend">
-										<span class="add-on">http://</span>
-										<input type="text" name="inputLink" class="input-xlarge" id="inputLink">
-									</div>
-									<p class="help-block">
-										A web address pointing to the texture you want
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label for="selectClick" class="control-label">Click</label>
-								<div class="controls">
-									<select id="selectClick">
-										<option selected value="nogood">Please Select...</option>
-										<option value="lefta">Left Click Air</option>
-										<option value="leftb">Left Click Block</option>
-										<option value="righta">Right Click Air</option>
-										<option value="rightb">Right Click Block</option>
-									</select>
-								</div>
-							</div>
-							<div class="control-group">
-								<label for="sliderRH" class="control-label">Restore Health</label>
-								<div class="controls">
-									<div class="formSlider" id="sliderRH" name="slideRrH"></div><span id="spanSlideRH">1</span>
-									<p class="help-block">
-										The number of hearts to restore. <a data-content='2 = 1 <i class="icon-heart"></i><br>10 = 5 <i class="icon-heart"></i><br>20 = 10 <i class="icon-heart"></i>' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Restore Health"><i class="icon-question-sign icon-white"></i></a>
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label for="inputDamage" class="control-label">Damage Dealt</label>
-								<div class="controls">
-									<input type="text" id="inputDamage" name="inputDamage" class="input-mini"/>
-									<p class="help-block">
-										The amount of damage to inflict on the entity hit. <a data-content='Same as hearts in restore health.<br>1 damages entity by half a heart.<br>40 could kill an unarmored player twice.' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Damage Dealt"><i class="icon-question-sign icon-white"></i></a>
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputMessage">Message</label>
-								<div class="controls">
-									<input type="text" class="input-xlarge" name="inputMessage" id="inputMessage">
-									<p class="help-block">
-										This is sent to the player when the item is used
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label">Consume Item</label>
-								<div class="controls">
-									<label class="radio">
-										<input type="radio" value="true" id="radioConsumeTrue" name="radioClick"/>
-										Yes </label>
-									<label class="radio">
-										<input type="radio" value="false" id="radioConsumeFalse" name="radioClick"/>
-										No </label>
-									<p class="help-block">
-										If Yes the item will be removed when used. 
-										<a data-content='If No the item will last forever.' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Consume Item"><i class="icon-question-sign icon-white"></i></a>
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputCape">Wear Cape</label>
-								<div class="controls">
-									<div class="input-prepend">
-										<span class="add-on">http://</span>
-										<input type="text" name="inputCape" class="input-xlarge" id="inputCape">
-									</div>
-									<p class="help-block">
-										A web address pointing to the cape you want
-									</p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputSound">Play Sound</label>
-								<div class="controls">
-									<div class="input-prepend">
-										<span class="add-on">http://</span>
-										<input type="text" name="inputSound" class="input-xlarge" id="inputSound">
-									</div>
-									<p class="help-block">
-										A web address pointing to the sound you want to hear
-									</p>
-								</div>
-							</div>
-							<div id="tabsCmd">
-								<ul>
-									<li>
-										<a href="#tabsCmd-1">Command Disabled</a>
-									</li>
-									<li>
-										<a href="#tabsCmd-2">Command Enabled</a>
-									</li>
-								</ul>
-								<div id="tabsCmd-1">
-									<div class="control-group">
-										<p class="help-block">
-											Clicking the block will <b><i>not</i></b> run a command
-										</p>
-									</div>
-								</div>
-								<div id="tabsCmd-2">
-									<div class="control-group">
-										<label class="control-label">Command Origin</label>
-										<div class="controls">
-											<label class="radio">
-												<input type="radio" value="player" id="radioCmdPlayer" name="radioCmd"/>
-												Run as Player </label>
-											<label class="radio">
-												<input type="radio" value="console" id="radioCmdConsole" name="radioCmd"/>
-												Run as Console </label>
-										</div>
-									</div>
-									<div class="control-group">
-										<label class="control-label" for="inputAction">Command</label>
-										<div class="controls">
-											<div class="input-prepend">
-												<span class="add-on">/</span>
-												<input type="text" name="inputAction" class="input-xlarge" id="inputAction">
-											</div>
-											<p class="help-block">
-												This command will be run as configured above when you click with the item
-											</p>
-										</div>
-									</div>
 								</div>
 							</div>
 						</fieldset>
@@ -587,19 +456,18 @@
     <span>jail</span>: <span class="yml" id="finJail"></span>
     <span>residence</span>: <span class="yml" id="finResidence"></span>
 <span class="ymlList">gui</span>:
-    <span>lockkey</span>: <span class="yml" id="finLockkey"></span>
-    <span>menukey</span>: <span class="yml" id="finMenukey"></span>
+    <span>lockkey</span>: <span class="yml" id="finLockkey"></span><!-- Disabled? <span>menukey</span>: <span class="yml" id="finMenukey"></span> -->
     <span>signgui</span>: <span class="yml" id="finSigngui"></span>
 <span class="ymlList">storage</span>:
-    <span>type</span>: <span class="yml" id="finType"></span>
+    <span>type</span>: <span class="yml" id="finType">SQLITE</span>
     <span>host</span>: <span class="yml" id="finHost"></span>
     <span>port</span>: <span class="yml" id="finPort"></span>
     <span>database</span>: <span class="yml" id="finDatabase"></span>
     <span>username</span>: <span class="yml" id="finUsername"></span>
     <span>password</span>: <span class="yml" id="finPassword"></span>
 <span class="ymlList">lock</span>:
-    <span>cost</span>: <span class="yml" id="fincCost"></span>
-    <span>maxcost</span>: <span class="yml" id="finMmaxcost"></span>
+    <span>cost</span>: <span class="yml" id="finCost"></span>
+    <span>maxcost</span>: <span class="yml" id="finMaxcost"></span>
     <span>destroycost</span>: <span class="yml" id="finDestroycost"></span>
     <span>defaultclosetimer</span>: <span class="yml" id="finDefaultclosetimer"></span>
     <span>playsound</span>: <span class="yml" id="finPlaysound"></span>
@@ -625,11 +493,6 @@
 			</footer>
 		</div>
 		<script>
-			function refreshSlider() {
-				var numRH = $("#sliderRH").slider("value");
-				$("#spanSlideRH").html(numRH);
-				$("#finRestore").html(numRH);
-			}
 
 			$(function() {
 
@@ -641,74 +504,124 @@
 
 				$('.pops').popover()
 
-				$("#sliderRH").slider({
-					orientation : "horizontal",
-					range : "min",
-					max : 20,
-					value : 1,
-					step : 1,
-					slide : refreshSlider,
-					change : refreshSlider
+				var $tabsDB = $('#tabsDB').tabs();
+				
+				$( "#tabsDB" ).tabs({
+					select: function(event, ui) {
+						if(ui.index==0){
+							$("#finType").html('SQLITE');
+						} else if (ui.index==1){
+							$("#finType").html('MYSQL');
+						}
+					}
+				});
+				
+				$("#radioEconomyTrue, #radioEconomyFalse").change(function() {
+					$("#finEconomy").html($('input:radio[name=radioEconomy]:checked').val());
+				});
+				
+				$("#radioWarTrue, #radioWarFalse").change(function() {
+					$("#finWar").html($('input:radio[name=radioWar]:checked').val());
+				});
+				
+				$("#radioMobArenaTrue, #radioMobArenaFalse").change(function() {
+					$("#finMobarena").html($('input:radio[name=radioMobArena]:checked').val());
+				});
+				
+				$("#radioJailTrue, #radioJailFalse").change(function() {
+					$("#finJail").html($('input:radio[name=radioJail]:checked').val());
+				});
+				
+				$("#radioResidenceTrue, #radioResidenceFalse").change(function() {
+					$("#finResidence").html($('input:radio[name=radioResidence]:checked').val());
 				});
 
-				var $tabsCmd = $('#tabsCmd').tabs();
-
-				$("#inputName").change(function() {
-					$("#finName").html(this.value);
-				});
-
-				$("#inputLink").change(function() {
-					$("#finTexture").html("http://" + this.value);
-				});
-
-				$("#selectClick").change(function() {
+				$("#selectKeybinding").change(function() {
 					if(this.value != "nogood")
-						$("#finClick").html(this.value);
+						$("#finLockkey").html(this.value);
 					else
-						$("#finClick").html("");
+						$("#finLockkey").html("");
 				});
 
-				$("#inputDamage").change(function() {
-					$("#finDamage").html(this.value);
+				$("#radioSignGuiTrue, #radioSignGuiFalse").change(function() {
+					$("#finSigngui").html($('input:radio[name=radioSignGui]:checked').val());
+				});
+				
+				$("#inputMysqlHost").change(function() {
+					$("#finHost").html("'" + this.value + "'");
 				});
 
-				$("#inputMessage").change(function() {
-					$("#finMessage").html(this.value);
+				$("#inputMysqlPort").change(function() {
+					$("#finPort").html("'" + this.value + "'");
 				});
-
-				$("#radioConsumeTrue, #radioConsumeFalse").change(function() {
-					$("#finUseup").html($('input:radio[name=radioClick]:checked').val());
+				
+				$("#inputMysqlDatabase").change(function() {
+					$("#finDatabase").html("'" + this.value + "'");
 				});
-
-				$("#inputCape").change(function() {
-					$("#finCapeurl").html("http://" + this.value);
+				
+				$("#inputMysqlUsername").change(function() {
+					$("#finUsername").html("'" + this.value + "'");
 				});
-
-				$("#inputSound").change(function() {
-					$("#finSoundurl").html("http://" + this.value);
+				
+				$("#inputMysqlPassword").change(function() {
+					$("#finPassword").html("'" + this.value + "'");
 				});
-
-				$("#radioCmdPlayer, #radioCmdConsole, #inputAction").change(function() {
-					$("#finCommand").html($('input:radio[name=radioCmd]:checked').val() + ":" + $('#inputAction').val());
+				
+				$("#inputCost").change(function() {
+					$("#finCost").html(this.value);
+				});
+				
+				$("#inputMaxcost").change(function() {
+					$("#finMaxcost").html(this.value);
+				});
+				
+				$("#inputDestroycost").change(function() {
+					$("#finDestroycost").html(this.value);
+				});
+				
+				$("#inputClosetimer").change(function() {
+					$("#finDefaultclosetimer").html(this.value);
+				});
+				
+				$("#radioPlaySoundTrue, #radioPlaySoundFalse").change(function() {
+					$("#finPlaysound").html($('input:radio[name=radioPlaySound]:checked').val());
+				});
+				
+				$("#inputSoundUrl").change(function() {
+					$("#finSound").html("'http://" + this.value + "'");
 				});
 			});
 
 		</script>
 		<script type="text/javascript">
 			Downloadify.create('downloadify', {
-				filename : function() {
-					return $("#finName").html() + ".yml";
-				},
+				filename : 'config.yml',
 				data : function() {
-					var filetext = 'item:' + '\n    name: ' + $("#finName").html() + '\n    texture: ' + $("#finTexture").html() + '\n    action:';
-					filetext += ($("#finClick").html()    == '') ? '' : '\n        click: ' + $("#finClick").html();
-					filetext += ($("#finRestore").html()  == '') ? '' : '\n        restorehealth: ' + $("#finRestore").html();
-					filetext += ($("#finDamage").html()   == '') ? '' : '\n        damage: ' + $("#finDamage").html();
-					filetext += ($("#finMessage").html()  == '') ? '' : '\n        message: ' + $("#finMessage").html();
-					filetext += ($("#finUseup").html()    == '') ? '' : '\n        useup: ' + $("#finUseup").html();
-					filetext += ($("#finCapeurl").html()  == '') ? '' : '\n        capeurl: ' + $("#finCapeurl").html();
-					filetext += ($("#finSoundurl").html() == '') ? '' : '\n        playsound: ' + $("#finSoundurl").html();
-					filetext += ($("#finCommand").html()  == '') ? '' : '\n        command: ' + $("#finCommand").html();
+					var filetext = '';
+					filetext += 'features:';
+					filetext += ($("#finEconomy").html()    	   == '') ? '\n    economy: false' 		    : '\n    economy: '   			+ $("#finEconomy").html();
+					filetext += ($("#finWar").html()    		   == '') ? '\n    war: false' 			    : '\n    war: ' 	 	 		+ $("#finWar").html();
+					filetext += ($("#finMobarena").html()    	   == '') ? '\n    mobarena: false'         : '\n    mobarena: '  			+ $("#finMobarena").html();
+					filetext += ($("#finJail").html()   		   == '') ? '\n    jail: false' 		    : '\n    jail: ' 	 			+ $("#finJail").html();
+					filetext += ($("#finResidence").html()    	   == '') ? '\n    residence: false' 	   	: '\n    residence: ' 			+ $("#finResidence").html();
+					filetext += '\n'+'gui:';
+					filetext += ($("#finLockkey").html()    	   == '') ? '\n    lockkey: KEY_L'  		: '\n    lockkey: '   			+ $("#finLockkey").html();
+					filetext += '\n    menukey: DISABLED';
+					filetext += ($("#finSigngui").html()    	   == '') ? '\n    signgui: true' 		   	: '\n    signgui: '   			+ $("#finSigngui").html();
+					filetext += '\n'+'storage:';
+					filetext += ($("#finType").html()    		   == '') ? '\n    type: SQLITE' 		   	: '\n    type: ' 	 			+ $("#finType").html();
+					filetext += ($("#finHost").html()              == '') ? '\n    host: \'localhost\''     : '\n    host: ' 	 			+ $("#finHost").html();
+					filetext += ($("#finPort").html()              == '') ? '\n    port: \'3306\'' 		   	: '\n    port: ' 	 			+ $("#finPort").html();
+					filetext += ($("#finDatabase").html()          == '') ? '\n    database: \'minecraft\'' : '\n    database: '  			+ $("#finDatabase").html();
+					filetext += ($("#finUsername").html()          == '') ? '\n    username: \'root\''      : '\n    username: '  			+ $("#finUsername").html();
+					filetext += ($("#finPassword").html()          == '') ? '\n    password: \'password\''  : '\n    password: '  			+ $("#finPassword").html();
+					filetext += '\n'+'lock:';
+					filetext += ($("#finCost").html()              == '') ? '\n    cost: 100' 			   	: '\n    cost: ' 	 			+ $("#finCost").html();
+					filetext += ($("#finMaxcost").html()           == '') ? '\n    maxcost: 100' 		   	: '\n    maxcost: '   			+ $("#finMaxcost").html();
+					filetext += ($("#finDestroycost").html()       == '') ? '\n    destroycost: -10' 	   	: '\n    destroycost: ' 		+ $("#finDestroycost").html();
+					filetext += ($("#finDefaultclosetimer").html() == '') ? '\n    defaultclosetimer: 2'    : '\n    defaultclosetimer: ' 	+ $("#finDefaultclosetimer").html();
+					filetext += ($("#finPlaysound").html()    	   == '') ? '\n    playsound: false' 	   	: '\n    playsound: ' 			+ $("#finPlaysound").html();
+					filetext += ($("#finSound").html()    		   == '') ? '\n    sound: \'http://dl.dropbox.com/u/36067670/BukkitInventoryTools/Sounds/Digilock.wav\'' : '\n    sound: ' + $("#finSound").html();
 					return filetext;
 				},
 				transparent : false,
