@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+        <meta charset="utf-8">
+        <title>Spout Tools | Digilock | Plugin Config</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="http://mikenon.github.com/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                padding-top: 60px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link href="http://mikenon.github.com/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link href="http://mikenon.github.com/css/custom-theme/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css"/>
+        <link href="http://mikenon.github.com/google-code-prettify/prettify.css" rel="stylesheet"/>
+        <script src="http://mikenon.github.com/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+        <script src="http://mikenon.github.com/js/jquery-ui-1.8.20.custom.min.js" type="text/javascript"></script>
+        <script src="http://mikenon.github.com/downloadify/js/downloadify.js" type="text/javascript"></script>
+        <script src="http://mikenon.github.com/downloadify/js/swfobject.js" type="text/javascript"></script>
+        <script src="http://mikenon.github.com/google-code-prettify/prettify.js" type="text/javascript"></script>
+        <script src="http://mikenon.github.com/bootstrap/js/bootstrap-tooltip.js"></script>
+        <script src="http://mikenon.github.com/bootstrap/js/bootstrap-popover.js"></script>
+        <script src="http://legpit.com/bootstrap/js/bootstrap-collapse.js"></script>
+        <script src="http://legpit.com/bootstrap/js/bootstrap-dropdown.js"></script>
+    </head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+					<a href="http://mikenon.github.com/" class="brand">Spout Tools</a>
+					<div class="nav-collapse">
+                        <ul class="nav">
+							<li>
+								<a href="http://mikenon.github.com/">Home</a>
+							</li>
+							<li class="dropdown">
+								<a href="plugins/" class="dropdown-toggle" data-toggle="dropdown">Plugins <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<a href="../EasyBlocks/">EasyBlocks</a>
+									<a href="../Digilock/">Digilock</a>
+								</ul>
+							</li>
+							<li class="active dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Digilock <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<a href="./plugin_config.html">Plugin Config</a>
+								</ul>
+							</li>
+							<li>
+								<a href="http://mikenon.github.com/about.html">About</a>
+							</li>
+						</ul>
+                    </div>
+				</div>
+			</div>
+        </div>
+		<div class="container">
+			<div class="row">
+				<p>
+					<a href="http://forums.spout.org/threads/admin-econ-digilock-0-1-1-gui-based-locking-system-spn1099-cb1-2-5-r1-0.2676/">Digilock</a> is a plugin for <a href="http://spout.org">Spout</a> that allows you to lock containers and mechanics with a GUI.
+				</p>
+				<p>
+					This page enables you to create a config.yml file for Digilock
+				</p>
+			</div>
+			<div class="row">
+				<div class="span6">
+					<form action="#" method="post" accept-charset="utf-8" class="form-horizontal">
+						<fieldset>
+							<legend>
+								Create a plugin config
+							</legend>
+							<div class="control-group">
+								<label class="control-label" for="inputName">Item Name</label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="inputName" id="inputName">
+									<p class="help-block">
+										In-game name of the item
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputLink">Texture Link</label>
+								<div class="controls">
+									<div class="input-prepend">
+										<span class="add-on">http://</span>
+										<input type="text" name="inputLink" class="input-xlarge" id="inputLink">
+									</div>
+									<p class="help-block">
+										A web address pointing to the texture you want
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="selectClick" class="control-label">Click</label>
+								<div class="controls">
+									<select id="selectClick">
+										<option selected value="nogood">Please Select...</option>
+										<option value="lefta">Left Click Air</option>
+										<option value="leftb">Left Click Block</option>
+										<option value="righta">Right Click Air</option>
+										<option value="rightb">Right Click Block</option>
+									</select>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="sliderRH" class="control-label">Restore Health</label>
+								<div class="controls">
+									<div class="formSlider" id="sliderRH" name="slideRrH"></div><span id="spanSlideRH">1</span>
+									<p class="help-block">
+										The number of hearts to restore. <a data-content='2 = 1 <i class="icon-heart"></i><br>10 = 5 <i class="icon-heart"></i><br>20 = 10 <i class="icon-heart"></i>' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Restore Health"><i class="icon-question-sign icon-white"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label for="inputDamage" class="control-label">Damage Dealt</label>
+								<div class="controls">
+									<input type="text" id="inputDamage" name="inputDamage" class="input-mini"/>
+									<p class="help-block">
+										The amount of damage to inflict on the entity hit. <a data-content='Same as hearts in restore health.<br>1 damages entity by half a heart.<br>40 could kill an unarmored player twice.' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Damage Dealt"><i class="icon-question-sign icon-white"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputMessage">Message</label>
+								<div class="controls">
+									<input type="text" class="input-xlarge" name="inputMessage" id="inputMessage">
+									<p class="help-block">
+										This is sent to the player when the item is used
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label">Consume Item</label>
+								<div class="controls">
+									<label class="radio">
+										<input type="radio" value="true" id="radioConsumeTrue" name="radioClick"/>
+										Yes </label>
+									<label class="radio">
+										<input type="radio" value="false" id="radioConsumeFalse" name="radioClick"/>
+										No </label>
+									<p class="help-block">
+										If Yes the item will be removed when used. 
+										<a data-content='If No the item will last forever.' rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Consume Item"><i class="icon-question-sign icon-white"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputCape">Wear Cape</label>
+								<div class="controls">
+									<div class="input-prepend">
+										<span class="add-on">http://</span>
+										<input type="text" name="inputCape" class="input-xlarge" id="inputCape">
+									</div>
+									<p class="help-block">
+										A web address pointing to the cape you want
+									</p>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="inputSound">Play Sound</label>
+								<div class="controls">
+									<div class="input-prepend">
+										<span class="add-on">http://</span>
+										<input type="text" name="inputSound" class="input-xlarge" id="inputSound">
+									</div>
+									<p class="help-block">
+										A web address pointing to the sound you want to hear
+									</p>
+								</div>
+							</div>
+							<div id="tabsCmd">
+								<ul>
+									<li>
+										<a href="#tabsCmd-1">Command Disabled</a>
+									</li>
+									<li>
+										<a href="#tabsCmd-2">Command Enabled</a>
+									</li>
+								</ul>
+								<div id="tabsCmd-1">
+									<div class="control-group">
+										<p class="help-block">
+											Clicking the block will <b><i>not</i></b> run a command
+										</p>
+									</div>
+								</div>
+								<div id="tabsCmd-2">
+									<div class="control-group">
+										<label class="control-label">Command Origin</label>
+										<div class="controls">
+											<label class="radio">
+												<input type="radio" value="player" id="radioCmdPlayer" name="radioCmd"/>
+												Run as Player </label>
+											<label class="radio">
+												<input type="radio" value="console" id="radioCmdConsole" name="radioCmd"/>
+												Run as Console </label>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="inputAction">Command</label>
+										<div class="controls">
+											<div class="input-prepend">
+												<span class="add-on">/</span>
+												<input type="text" name="inputAction" class="input-xlarge" id="inputAction">
+											</div>
+											<p class="help-block">
+												This command will be run as configured above when you click with the item
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+				<div class="span5">
+					<div id="legend">
+						<legend>
+							Output
+						</legend>
+						<p>
+							When you're done copy the lines below to a text file and add it to your server.
+						</p>
+						<p>
+							If you have Flash 10+ enabled you can use the button below to download a correctly formatted file
+						</p>
+                        <pre class="prettyprint linenums">
+<span class="ymlList">item</span>:
+    <span>name</span>: <span class="yml" id="finName"></span>
+    <span>texture</span>: <span class="yml" id="finTexture"></span>
+    <span class="ymlList">action</span>:
+        <span>click</span>: <span class="yml" id="finClick"></span>
+        <span>restorehealth</span>: <span class="yml" id="finRestore"></span>
+        <span>damage</span>: <span class="yml" id="finDamage"></span>
+        <span>message</span>: <span class="yml" id="finMessage"></span>
+        <span>useup</span>: <span class="yml" id="finUseup"></span>
+        <span>capeurl</span>: <span class="yml" id="finCapeurl"></span>
+        <span>playsound</span>: <span class="yml" id="finSoundurl"></span>
+        <span>command</span>: <span class="yml" id="finCommand"></span>
+</pre>
+					</div>
+					<div id="dlBtn">
+						<p id="downloadify">
+							You must have Flash 10 installed to download this file.
+						</p>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<footer>
+				<p class="pull-left">
+					&copy; This Website 2012
+				</p>
+				<p class="pull-right">
+					<a href="http://www.reddit.com/message/compose/?to=Mikecyber&subject=mikenon.github.com feedback" target="_blank">Contact</a>
+				</p>
+				<br>
+				<br>
+			</footer>
+		</div>
+		<script>
+			function refreshSlider() {
+				var numRH = $("#sliderRH").slider("value");
+				$("#spanSlideRH").html(numRH);
+				$("#finRestore").html(numRH);
+			}
+
+			$(function() {
+
+				window.prettyPrint && prettyPrint()
+
+				$("span.pln").css('color', '#005cdf');
+				$("span.ymlList").css('font-weight', 'bold');
+				$("span.yml").css('color', '#000000');
+
+				$('.pops').popover()
+
+				$("#sliderRH").slider({
+					orientation : "horizontal",
+					range : "min",
+					max : 20,
+					value : 1,
+					step : 1,
+					slide : refreshSlider,
+					change : refreshSlider
+				});
+
+				var $tabsCmd = $('#tabsCmd').tabs();
+
+				$("#inputName").change(function() {
+					$("#finName").html(this.value);
+				});
+
+				$("#inputLink").change(function() {
+					$("#finTexture").html("http://" + this.value);
+				});
+
+				$("#selectClick").change(function() {
+					if(this.value != "nogood")
+						$("#finClick").html(this.value);
+					else
+						$("#finClick").html("");
+				});
+
+				$("#inputDamage").change(function() {
+					$("#finDamage").html(this.value);
+				});
+
+				$("#inputMessage").change(function() {
+					$("#finMessage").html(this.value);
+				});
+
+				$("#radioConsumeTrue, #radioConsumeFalse").change(function() {
+					$("#finUseup").html($('input:radio[name=radioClick]:checked').val());
+				});
+
+				$("#inputCape").change(function() {
+					$("#finCapeurl").html("http://" + this.value);
+				});
+
+				$("#inputSound").change(function() {
+					$("#finSoundurl").html("http://" + this.value);
+				});
+
+				$("#radioCmdPlayer, #radioCmdConsole, #inputAction").change(function() {
+					$("#finCommand").html($('input:radio[name=radioCmd]:checked').val() + ":" + $('#inputAction').val());
+				});
+			});
+
+		</script>
+		<script type="text/javascript">
+			Downloadify.create('downloadify', {
+				filename : function() {
+					return $("#finName").html() + ".yml";
+				},
+				data : function() {
+					var filetext = 'item:' + '\n    name: ' + $("#finName").html() + '\n    texture: ' + $("#finTexture").html() + '\n    action:';
+					filetext += ($("#finClick").html()    == '') ? '' : '\n        click: ' + $("#finClick").html();
+					filetext += ($("#finRestore").html()  == '') ? '' : '\n        restorehealth: ' + $("#finRestore").html();
+					filetext += ($("#finDamage").html()   == '') ? '' : '\n        damage: ' + $("#finDamage").html();
+					filetext += ($("#finMessage").html()  == '') ? '' : '\n        message: ' + $("#finMessage").html();
+					filetext += ($("#finUseup").html()    == '') ? '' : '\n        useup: ' + $("#finUseup").html();
+					filetext += ($("#finCapeurl").html()  == '') ? '' : '\n        capeurl: ' + $("#finCapeurl").html();
+					filetext += ($("#finSoundurl").html() == '') ? '' : '\n        playsound: ' + $("#finSoundurl").html();
+					filetext += ($("#finCommand").html()  == '') ? '' : '\n        command: ' + $("#finCommand").html();
+					return filetext;
+				},
+				transparent : false,
+				swf : '/downloadify/media/downloadify.swf',
+				// downloadImage : '/js/downloadify/images/download.png',
+				downloadImage : '/img/dlbutton.png',
+				// width : 100,
+				width : 80,
+				// height : 30,
+				height : 28,
+				transparent : true,
+				append : false
+			});
+			//w=80 h=112
+		</script>
+	</body>
+</html>
