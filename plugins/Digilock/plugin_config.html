@@ -456,7 +456,7 @@
     <span>lockkey</span>: <span class="yml" id="finLockkey"></span><!-- Disabled? <span>menukey</span>: <span class="yml" id="finMenukey"></span> -->
     <span>signgui</span>: <span class="yml" id="finSigngui"></span>
 <span class="ymlList">storage</span>:
-    <span>type</span>: <span class="yml" id="finType">SQLITE</span>
+    <span>type</span>: <span class="yml" id="finType"></span>
     <span>host</span>: <span class="yml" id="finHost"></span>
     <span>port</span>: <span class="yml" id="finPort"></span>
     <span>database</span>: <span class="yml" id="finDatabase"></span>
@@ -512,6 +512,8 @@
 						}
 					}
 				});
+				
+				$("#finType").html('SQLITE');
 				
 				$("#radioEconomyTrue, #radioEconomyFalse").change(function() {
 					$("#finEconomy").html($('input:radio[name=radioEconomy]:checked').val());
