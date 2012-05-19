@@ -1,0 +1,12 @@
+item:
+    name: Battle Axe
+    texture: http://dl.dropbox.com/u/79326363/Spout/image/test_item.png
+    action:
+        click: righta
+        restorehealth: 0
+        damage: 15
+        message: Swing!
+        useup: false
+        capeurl: http://dl.dropbox.com/u/79326363/Spout/image/cape_bacon.png
+        playsound: http://dl.dropbox.com/u/79326363/Spout/sound/swing.wav
+        command: player:me Swung the test item
