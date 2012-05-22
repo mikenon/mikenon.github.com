@@ -186,7 +186,7 @@ $(function () {
             return fillFile();
         },
         transparent : false,
-        swf : '/js/downloadify/media/downloadify.swf',
+        swf : '/downloadify/media/downloadify.swf',
         downloadImage : '/img/dlbutton.png',
         width : 80,
         height : 28,
