@@ -205,9 +205,6 @@ $(function () {
         }
     });
     $("#uploadBtn").click(function() {
-        if(!window.WebSocket) {
-            alert("WebSocket not detected,\nthis tool may not work as expected.");
-        }
         $("#inputFilename").val($("#finName").html() + '.yml');
         $loginPop.dialog("open");
     });	
