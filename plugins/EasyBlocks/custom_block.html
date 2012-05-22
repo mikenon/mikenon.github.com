@@ -63,8 +63,10 @@
         </div>
         <div class="container">
             <div class="row">
-                <p><a href="http://forums.spout.org/threads/misc-blocks-easyblocks-v0-2-easily-create-custom-blocks-and-items-spn1136-cb1-2-5-r1-0.2538/">EasyBlocks</a> is a plugin for <a href="http://spout.org">Spout</a> that allows you to create custom blocks and items without the knowledge of java.</p>
+                <p><a href="http://forums.spout.org/threads/misc-blocks-easyblocks-v0-2-easily-create-custom-blocks-and-items-spn1136-cb1-2-5-r1-0.2538/" target="_blank">EasyBlocks</a> is a plugin for <a href="http://spout.org" target="_blank">Spout</a> that allows you to create custom blocks and items without the knowledge of java.</p>
                 <p>This page enables you to create a yml file that EasyBlocks uses to create new blocks.</p>
+                <p><b>New</b>: If your server uses <a href="http://forums.bukkit.org/threads/admn-info-jsonapi-v3-6-7-json-http-and-socket-api-for-controlling-a-server-1-2-5.14270/" target="_blank">JSONAPI</a> you can now upload custom blocks directly to the EasyBlocks directory</p>
+                <p><b>New</b>: The Clear button at the bottom of the form lets you create multiple blocks without loading the page, maintaining the JSONAPI connection if present</p>
             </div>
             <div class="row">
                 <div class="span6">
@@ -84,7 +86,10 @@
                                 <div class="input-prepend">
                                     <span class="add-on">http://</span><input type="text" name="inputLink" class="input-xlarge" id="inputLink">
                                 </div>
-                                <p class="help-block">A web address pointing to the texture you want</p>
+                                <p class="help-block">
+                                    A URL pointing to the texture you want
+                                    <a id="popLink" data-content="Please enter a valid URL" rel="popover" class="btn btn-mini btn-info pops pull-right" href="#" data-original-title="Preview"><i class="icon-eye-open icon-white"></i></a>
+                                </p>
                             </div>
                         </div>
                         <div class="control-group">
@@ -204,6 +209,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-actions">
+                            <button id="btnClear" class="btn btn-info pull-right">Clear Form</button>
+                        </div>
                         </fieldset>
                     </form>
                 </div>
@@ -226,12 +234,22 @@
         <span>command</span>: <span class="yml" id="finCommand"></span>
 </pre>
                     </div>
-					<div id="dlBtn">
-						<p id="downloadify">
-							You must have Flash 10 installed to download this file.
-						</p>
-					</div>
-					</div> </div>
+                    <div id="downloads" class="row">
+                        <div class="span2">
+                            <p id="downloadify">
+                                You must have Flash 10 installed to download this file.
+                            </p>
+                        </div>
+                        <div class="span2 offset1 pull-right">
+                            <p id="upload" class="pull-right">New: <button id="uploadBtn" class="btn btn-primary">Upload</button></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="span3 offset1">
+                                <div id="jsonapiStatus" style="display: none;" class="alert alert-success"></div>
+                            </div>
+                    </div>
+                    </div> </div>
             <div id="dialog" title="Shaped Recipe Help">
                 Define a recipe by entering comma seperated values for blocks and items. Imagine a crafting table, starting at the top left.<br>
                 <center><img src="/img/recipehelp.png"><br>would be:<br><pre>79,89,79 89,1,89 79,89,79</pre></center>
@@ -240,6 +258,39 @@
                 Define a recipe by entering comma seperated values for blocks and items. The configuration of the blocks does not matter<br>
                 <center><img src="/img/recipehelp2.png"><br>would be:<br><pre>101,48,1</pre></center>
             </div>
+            <div id="formPop" title="Upload to Server">
+                <div class="row">
+                    <div id="formLoginInfo" class="span3">
+                        <p>This web application stores <b>Nothing</b>. The source is fully available on <a href="https://github.com/mikenon/mikenon.github.com" target="_blank">Github</a>.</p>
+                        <p>If you're viewing this page from the same computer that hosts your server you can use <i>localhost</i> as the hostname.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span3">
+                        <form id="formLogin" action="#">
+                            <legend>Requires <a href="http://forums.bukkit.org/threads/admn-info-jsonapi-v3-6-7-json-http-and-socket-api-for-controlling-a-server-1-2-5.14270/" target="_blank">JSONAPI</a></legend>
+                            <input type="text" class="input-small" id="inputHostname" placeholder="Hostname"><br />
+                            <input type="text" class="input-small" id="inputHostport" placeholder="Port"><br />
+                            <input type="text" class="input-small" id="inputUsername" placeholder="Username"><br />
+                            <input type="text" class="input-small" id="inputPassword" placeholder="Password"><br />
+                            <input type="text" class="input-small" id="inputSalt" placeholder="Salt"><br />
+                            <button type="submit" class="btn">Log in</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="action" style="display: none;">
+                        <div class="span3">
+                            <form id="formUpload" action="#">
+                                <legend>Filename</legend>
+                                <input type="text" class="input-medium" id="inputFilename" placeholder="Filename"><br />
+                                <button type="submit" class="btn">Upload</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="spanwidth" class="span4"></div>
             <hr>
             <footer>
                 <p class="pull-left">
@@ -252,152 +303,7 @@
                 <br>
             </footer>
         </div>
-        <script>
-        
-            function refreshSwatch() {
-                var numH = $("#sliderH").slider("value"), numL = $("#sliderL").slider("value"), numF = $("#sliderF").slider("value");
-                $("#spanSlideH").html(numH);
-                $("#spanSlideL").html(numL);
-                $("#spanSlideF").html(numF);
-                $("#finHardness").html(numH);
-                $("#finLight").html(numL);
-                $("#finFriction").html(numF);
-            }
-
-            $(function() {
-                
-                // make code pretty
-                window.prettyPrint && prettyPrint()
-                
-                $("span.pln").css('color','#005cdf');
-                $("span.ymlList").css('font-weight','bold');
-                $("span.yml").css('color','#000000');
-                
-                $('.pops').popover()
-                
-                var $dialog = $("#dialog").dialog({
-                    autoOpen : false,
-                    modal : true,
-                    buttons : {
-                        Close : function() {
-                            $(this).dialog("close");
-                        },
-                    }
-                });
-                
-                var $dialog2 = $("#dialog2").dialog({
-                    autoOpen : false,
-                    modal : true,
-                    buttons : {
-                        Close : function() {
-                            $(this).dialog("close");
-                        },
-                    }
-                });
-
-                $("#recipeHelpShaped").click(function() {
-                    $dialog.dialog("open");
-                });
-                $("#recipeHelpUnshaped").click(function() {
-                    $dialog2.dialog("open");
-                });
-
-                $("#sliderH").slider({
-                    orientation : "horizontal",
-                    range : "min",
-                    max : 50,
-                    value : 1,
-                    step : 0.1,
-                    slide : refreshSwatch,
-                    change : refreshSwatch
-                });
-                
-                $("#sliderL").slider({
-                    orientation : "horizontal",
-                    range : "min",
-                    max : 15,
-                    value : 1,
-                    slide : refreshSwatch,
-                    change : refreshSwatch
-                });
-                
-                $("#sliderF").slider({
-                    orientation : "horizontal",
-                    range : "min",
-                    max : 1.5,
-                    min : 0.3,
-                    value : 0.6,
-                    step : 0.1,
-                    slide : refreshSwatch,
-                    change : refreshSwatch
-                });
-
-                var $tabs = $('#tabs').tabs();
-                var $tabsCmd = $('#tabsCmd').tabs();
-                
-                $("#inputName").change(function() {
-                    $("#finName").html(this.value);
-                });
-                
-                $("#inputLink").change(function() {
-                    $("#finTexture").html("http://"+this.value);
-                });
-                
-                $("#inputVanilla").change(function() {
-                    $("#finVanilla").html(this.value);
-                });
-                
-                $("#inputRecipe").change(function() {
-                    $("#finRecipe").html(this.value);
-                });
-                
-                $("#inputRecipeShapedStr, #inputRecipeShapedCnt").change(function() {
-                    $("#finRecipe").html("shaped " + $('#inputRecipeShapedStr').val() + " " + $('#inputRecipeShapedCnt').val());
-                });
-                
-                $("#inputRecipeUnshapedStr, #inputRecipeUnshapedCnt").change(function() {
-                    $("#finRecipe").html("shapeless " + $('#inputRecipeUnshapedStr').val() + " " + $('#inputRecipeUnshapedCnt').val());
-                });
-                
-                $("#radioClickLeft, #radioClickRight, #radioCmdPlayer, #radioCmdConsole, #inputAction").change(function() {
-                    $("#finClick").html($('input:radio[name=radioClick]:checked').val());
-                    $("#finCommand").html($('input:radio[name=radioCmd]:checked').val() + ":" + $('#inputAction').val());
-                });
-            });
-
-        </script>
-        <script type="text/javascript">
-            Downloadify.create('downloadify', {
-                filename: function(){
-                    return $("#finName").html() + ".yml";
-                },
-                data: function(){ 
-                    var filetext =  'block:\n' +
-                                    '    name: ' + $("#finName").html() + '\n' +
-                                    '    texture: ' + $("#finTexture").html();
-                    filetext += ($("#finHardness").html() == '')    ? '' : '\n    hardness: '     + $("#finHardness").html();
-                    filetext += ($("#finLight").html() == '')       ? '' : '\n    lightlevel: '   + $("#finLight").html();
-                    filetext += ($("#finFriction").html() == '')    ? '' : '\n    finFriction: '  + $("#finFriction").html();
-                    filetext += ($("#finVanilla").html() == '')     ? '' : '\n    vanillablock: ' + $("#finVanilla").html();
-                    filetext += ($("#finRecipe").html() == '')      ? '' : '\n    recipe: '       + $("#finRecipe").html();
-                    filetext += ($("#finClick").html() == $("#finCommand").html()) ? '' : 
-                                                             '\n    action:' +
-                                                             '\n        click: '  + $("#finClick").html() +
-                                                             '\n        command: ' + $("#finCommand").html();
-                    return filetext;
-                },
-                transparent : false,
-                swf : '/downloadify/media/downloadify.swf',
-                // downloadImage : '/js/downloadify/images/download.png',
-                downloadImage : '/img/dlbutton.png',
-                // width : 100,
-                width : 80,
-                // height : 30,
-                height : 28,
-                transparent : true,
-                append : false
-            });
-            //w=80 h=112
-        </script>
+        <script type="text/javascript" src="/jsonapi/jsonapi.js"></script>
+        <script type="text/javascript" src="js/easyblocks_block.js"></script>
     </body>
 </html>
