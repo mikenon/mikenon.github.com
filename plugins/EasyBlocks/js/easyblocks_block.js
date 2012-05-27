@@ -48,6 +48,14 @@ $(function () {
     
     $('.pops').popover()
     
+    $("a[href^='http']").not($("a[href*='mikenon']")).each(function() {
+    	if(this.href)
+	    $(this).css({
+	        background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
+	        "padding-left": "20px"
+	    });
+	});
+    
     var $dialog = $("#dialog").dialog({
         autoOpen : false,
         modal : true,
