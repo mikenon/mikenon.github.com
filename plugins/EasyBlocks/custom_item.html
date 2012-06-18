@@ -64,16 +64,14 @@
         </div>
 		<div class="container">
 			<div class="row">
-				<p>
-					<a href="http://forums.spout.org/threads/misc-blocks-easyblocks-v0-2-easily-create-custom-blocks-and-items-spn1136-cb1-2-5-r1-0.2538/">EasyBlocks</a> is a plugin for <a href="http://spout.org">Spout</a> that allows you to create custom blocks and items without the knowledge of java.
-				</p>
-				<p>
-					This page enables you to create a yml file that EasyBlocks uses to create new items.
-				</p>
-			</div>
+                <p><a href="http://forums.spout.org/threads/misc-blocks-easyblocks-v0-2-easily-create-custom-blocks-and-items-spn1136-cb1-2-5-r1-0.2538/" target="_blank">EasyBlocks</a> is a plugin for <a href="http://spout.org" target="_blank">Spout</a> that allows you to create custom blocks and items without the knowledge of java.</p>
+                <p>This page enables you to create a yml file that EasyBlocks uses to create new blocks.</p>
+                <p><b>New</b>: If your server uses <a href="http://forums.bukkit.org/threads/admn-info-jsonapi-v3-6-7-json-http-and-socket-api-for-controlling-a-server-1-2-5.14270/" target="_blank">JSONAPI</a> you can now upload custom blocks directly to the EasyBlocks directory</p>
+                <p><b>New</b>: The Clear button at the bottom of the form lets you create multiple blocks without loading the page, maintaining the JSONAPI connection if present</p>
+            </div>
 			<div class="row">
 				<div class="span6">
-					<form action="#" method="post" accept-charset="utf-8" class="form-horizontal">
+					<form id="formItem" action="#" method="post" accept-charset="utf-8" class="form-horizontal">
 						<fieldset>
 							<legend>
 								Create a Custom Item!
@@ -219,6 +217,9 @@
 									</div>
 								</div>
 							</div>
+							<div class="form-actions">
+                            	<button id="btnClear" class="btn btn-info pull-right">Clear Form</button>
+                        	</div>
 						</fieldset>
 					</form>
 				</div>
@@ -247,14 +248,57 @@
         <span>playsound</span>: <span class="yml" id="finSoundurl"></span>
         <span>command</span>: <span class="yml" id="finCommand"></span>
 </pre>
-					</div>
-					<div id="dlBtn">
-						<p id="downloadify">
-							You must have Flash 10 installed to download this file.
-						</p>
-					</div>
-				</div>
+                    </div>
+                    <div id="downloads" class="row">
+                        <div class="span2">
+                            <p id="downloadify">
+                                You must have Flash 10 installed to download this file.
+                            </p>
+                        </div>
+                        <div class="span2 offset1 pull-right">
+                            <p id="upload" class="pull-right">New: <button id="uploadBtn" class="btn btn-primary">Upload</button></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="span3 offset1">
+                                <div id="jsonapiStatus" style="display: none;" class="alert alert-success"></div>
+                            </div>
+                    </div>
+                    </div>
 			</div>
+			<div id="formPop" title="Upload to Server">
+                <div class="row">
+                    <div id="formLoginInfo" class="span3">
+                        <p>This web application stores <b>Nothing</b>. The source is fully available on <a href="https://github.com/mikenon/mikenon.github.com" target="_blank">Github</a>.</p>
+                        <p>If you're viewing this page from the same computer that hosts your server you can use <i>localhost</i> as the hostname.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span3">
+                        <form id="formLogin" action="#">
+                            <legend>Requires <a href="http://forums.bukkit.org/threads/admn-info-jsonapi-v3-6-7-json-http-and-socket-api-for-controlling-a-server-1-2-5.14270/" target="_blank">JSONAPI</a></legend>
+                            <input type="text" class="input-small" id="inputHostname" placeholder="Hostname"><br />
+                            <input type="text" class="input-small" id="inputHostport" placeholder="Port"><br />
+                            <input type="text" class="input-small" id="inputUsername" placeholder="Username"><br />
+                            <input type="password" class="input-small" id="inputPassword" placeholder="Password"><br />
+                            <input type="password" class="input-small" id="inputSalt" placeholder="Salt"><br />
+                            <button type="submit" class="btn btn-primary">Log in</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="action" style="display: none;">
+                        <div class="span3">
+                            <form id="formUpload" action="#">
+                                <legend>Filename</legend>
+                                <input type="text" class="input-medium" id="inputFilename" placeholder="Filename"><br />
+                                <button type="submit" class="btn">Upload</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="spanwidth" class="span4"></div>
 			<hr>
 			<footer>
 				<p class="pull-left">
@@ -267,105 +311,7 @@
 				<br>
 			</footer>
 		</div>
-		<script>
-			function refreshSlider() {
-				var numRH = $("#sliderRH").slider("value");
-				$("#spanSlideRH").html(numRH);
-				$("#finRestore").html(numRH);
-			}
-
-			$(function() {
-
-				window.prettyPrint && prettyPrint()
-
-				$("span.pln").css('color', '#005cdf');
-				$("span.ymlList").css('font-weight', 'bold');
-				$("span.yml").css('color', '#000000');
-
-				$('.pops').popover()
-
-				$("#sliderRH").slider({
-					orientation : "horizontal",
-					range : "min",
-					max : 20,
-					value : 1,
-					step : 1,
-					slide : refreshSlider,
-					change : refreshSlider
-				});
-
-				var $tabsCmd = $('#tabsCmd').tabs();
-
-				$("#inputName").change(function() {
-					$("#finName").html(this.value);
-				});
-
-				$("#inputLink").change(function() {
-					$("#finTexture").html("http://" + this.value);
-				});
-
-				$("#selectClick").change(function() {
-					if(this.value != "nogood")
-						$("#finClick").html(this.value);
-					else
-						$("#finClick").html("");
-				});
-
-				$("#inputDamage").change(function() {
-					$("#finDamage").html(this.value);
-				});
-
-				$("#inputMessage").change(function() {
-					$("#finMessage").html(this.value);
-				});
-
-				$("#radioConsumeTrue, #radioConsumeFalse").change(function() {
-					$("#finUseup").html($('input:radio[name=radioClick]:checked').val());
-				});
-
-				$("#inputCape").change(function() {
-					$("#finCapeurl").html("http://" + this.value);
-				});
-
-				$("#inputSound").change(function() {
-					$("#finSoundurl").html("http://" + this.value);
-				});
-
-				$("#radioCmdPlayer, #radioCmdConsole, #inputAction").change(function() {
-					$("#finCommand").html($('input:radio[name=radioCmd]:checked').val() + ":" + $('#inputAction').val());
-				});
-			});
-
-		</script>
-		<script type="text/javascript">
-			Downloadify.create('downloadify', {
-				filename : function() {
-					return $("#finName").html() + ".yml";
-				},
-				data : function() {
-					var filetext = 'item:' + '\n    name: ' + $("#finName").html() + '\n    texture: ' + $("#finTexture").html() + '\n    action:';
-					filetext += ($("#finClick").html()    == '') ? '' : '\n        click: ' + $("#finClick").html();
-					filetext += ($("#finRestore").html()  == '') ? '' : '\n        restorehealth: ' + $("#finRestore").html();
-					filetext += ($("#finDamage").html()   == '') ? '' : '\n        damage: ' + $("#finDamage").html();
-					filetext += ($("#finMessage").html()  == '') ? '' : '\n        message: ' + $("#finMessage").html();
-					filetext += ($("#finUseup").html()    == '') ? '' : '\n        useup: ' + $("#finUseup").html();
-					filetext += ($("#finCapeurl").html()  == '') ? '' : '\n        capeurl: ' + $("#finCapeurl").html();
-					filetext += ($("#finSoundurl").html() == '') ? '' : '\n        playsound: ' + $("#finSoundurl").html();
-					filetext += ($("#finCommand").html()  == '') ? '' : '\n        command: ' + $("#finCommand").html();
-					return filetext;
-				},
-				transparent : false,
-				swf : '/downloadify/media/downloadify.swf',
-				// downloadImage : '/js/downloadify/images/download.png',
-				downloadImage : '/img/dlbutton.png',
-				// width : 100,
-				width : 80,
-				// height : 30,
-				height : 28,
-				transparent : true,
-				append : false
-			});
-			//w=80 h=112
-		</script>
+		<script type="text/javascript" src="/jsonapi/jsonapi.js"></script>
+        <script type="text/javascript" src="js/easyblocks_item.js"></script>
 	</body>
 </html>
