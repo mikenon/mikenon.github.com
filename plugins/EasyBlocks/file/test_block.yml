@@ -1,11 +1,12 @@
 block:
     name: Almost Stone
-    texture: http://dl.dropbox.com/u/79326363/Spout/image/test_block.png
+    texture: http://dl.dropbox.com/u/79326363/Spout/EasyBlocks/example/test_block.png
     hardness: 1
-    lightlevel: 3
-    Friction: 0.6
+    lightlevel: 6
+    friction: 0.6
     vanillablock: 1
-    recipe: shapeless 1,2,3 3
+    recipe: shapeless 1,<test_item>,3 3
+    furnace: <test_item>,1
     action:
         click: right
         command: player:me clicked the test block
