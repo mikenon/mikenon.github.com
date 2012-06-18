@@ -148,7 +148,7 @@ $(function() {
 		e.preventDefault();
 		$("#sliderRH").slider('value', 1);
 		$("#spanSlideRH").html('1');
-		$('#formItem').each(function() {
+		$('#formTool').each(function() {
 			this.reset();
 		});
 		$('.yml').each(function(i, obj) {
@@ -158,7 +158,7 @@ $(function() {
 		return false;
 	});
 	function fillFile() {
-		var filetext = 'item:' 
+		var filetext = 'tool:' 
 				   + '\n    name: ' + $("#finName").html() 
 				   + '\n    texture: ' + $("#finTexture").html()
 	    filetext += ($("#finRecipe").html() == '') ? '' : '\n    recipe: ' + $("#finRecipe").html();

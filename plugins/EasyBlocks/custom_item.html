@@ -51,6 +51,7 @@
 								<ul class="dropdown-menu">
 									<a href="./custom_block.html">Custom Blocks</a>
 									<a href="./custom_item.html">Custom Items</a>
+									<a href="./custom_tool.html">Custom Tools</a>
 									<a href="./sample_files.html">Sample Configs</a>
 								</ul>
 							</li>
@@ -97,6 +98,47 @@
 									</p>
 								</div>
 							</div>
+							<div id="tabs">
+                            <ul>
+                                <li><a href="#tabs-1">Recipe Shaped</a></li>
+                                <li><a href="#tabs-2">Recipe Shapeless</a></li>
+                            </ul>
+                            <div id="tabs-1">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputRecipeShapedStr" name="inputRecipeShapedStr">Shaped Recipe</label>
+                                    <div class="controls">
+                                        <div class="input-prepend">
+                                            <input type="text" name="inputRecipeShapedStr" class="input-xlarge" id="inputRecipeShapedStr"><span class="add-on" id="recipeHelpShaped"><i class="icon-exclamation-sign"></i></span>
+                                            <p class="help-block">Pattern of items to craft this block</p>
+                                            <input type="text" name="inputRecipeShapedCnt" class="input-mini" id="inputRecipeShapedCnt">
+                                            <p class="help-block">Number of blocks produced by the recipe</p>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tabs-2">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputRecipeUnshapedStr" name="inputRecipeUnshapedStr">Unshaped Recipe</label>
+                                    <div class="controls">
+                                        <div class="input-prepend">
+                                            <input type="text" name="inputRecipeUnshapedStr" class="input-xlarge" id="inputRecipeUnshapedStr"><span class="add-on" id="recipeHelpUnshaped"><i class="icon-exclamation-sign"></i></span>
+                                            <p class="help-block">Pattern of items to craft this block</p>
+                                            <input type="text" name="inputRecipeUnshapedCnt" class="input-mini" id="inputRecipeUnshapedCnt">
+                                            <p class="help-block">Number of blocks produced by the recipe</p>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+							<label class="control-label" for="inputFurnaceId">Furnace Recipe</label>
+							<div class="controls">
+								<input type="text" name="inputFurnaceId" class="input-medium" id="inputFurnaceId">
+                                <p class="help-block">Id of item that is produced</p>
+                                <input type="text" name="inputFurnaceCnt" class="input-mini" id="inputFurnaceCnt">
+                                <p class="help-block">Number of items to produce</p>
+							</div>
+						</div>
 							<div class="control-group">
 								<label for="selectClick" class="control-label">Click</label>
 								<div class="controls">
@@ -238,6 +280,8 @@
 <span class="ymlList">item</span>:
     <span>name</span>: <span class="yml" id="finName"></span>
     <span>texture</span>: <span class="yml" id="finTexture"></span>
+    <span>recipe</span>: <span class="yml" id="finRecipe"></span>
+    <span>furnace</span>: <span class="yml" id="finFurnace"></span>
     <span class="ymlList">action</span>:
         <span>click</span>: <span class="yml" id="finClick"></span>
         <span>restorehealth</span>: <span class="yml" id="finRestore"></span>
@@ -266,6 +310,14 @@
                     </div>
                     </div>
 			</div>
+			<div id="dialog" title="Shaped Recipe Help">
+                Define a recipe by entering comma seperated values for blocks and items. Imagine a crafting table, starting at the top left.<br>
+                <center><img src="/img/recipehelp.png"><br>would be:<br><pre>79,89,79 89,1,89 79,89,79</pre></center>
+            </div>
+            <div id="dialog2" title="Unshaped Recipe Help">
+                Define a recipe by entering comma seperated values for blocks and items. The configuration of the blocks does not matter<br>
+                <center><img src="/img/recipehelp2.png"><br>would be:<br><pre>101,48,1</pre></center>
+            </div>
 			<div id="formPop" title="Upload to Server">
                 <div class="row">
                     <div id="formLoginInfo" class="span3">

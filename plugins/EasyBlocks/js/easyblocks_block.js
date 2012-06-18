@@ -141,6 +141,10 @@ $(function () {
         $("#finRecipe").html("shapeless " + $('#inputRecipeUnshapedStr').val() + " " + $('#inputRecipeUnshapedCnt').val());
     });
     
+    $("#inputFurnaceId, #inputFurnaceCnt").change(function() {
+        $("#finFurnace").html($('#inputFurnaceId').val() + "," + $('#inputFurnaceCnt').val());
+    });
+    
     $("#radioClickLeft, #radioClickRight, #radioCmdPlayer, #radioCmdConsole, #inputAction").change(function() {
         $("#finClick").html($('input:radio[name=radioClick]:checked').val());
         $("#finCommand").html($('input:radio[name=radioCmd]:checked').val() + ":" + $('#inputAction').val());
@@ -179,6 +183,8 @@ $(function () {
                         ? '' : '\n    vanillablock: ' + $("#finVanilla").html();
         filetext += ($("#finRecipe").html() == '')      
                         ? '' : '\n    recipe: '       + $("#finRecipe").html();
+        filetext += ($("#finFurnace").html() == '') 
+        				? '' : '\n    furnace: ' 	  + $("#finFurnace").html();
         filetext += ($("#finClick").html() == $("#finCommand").html()) 
                         ? '' : '\n    action:' +
                                '\n        click: '    + $("#finClick").html() +
