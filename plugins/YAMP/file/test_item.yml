@@ -1,6 +1,6 @@
 item:
     name: Battle Axe
-    texture: http://dl.dropbox.com/u/79326363/Spout/EasyBlocks/example/test_item.png
+    texture: http://dl.dropbox.com/u/79326363/Spout/YAMP/example/test_item.png
     recipe: shaped 1,1,1 0,1,0 0,<test_block>,0 1
     furnace: <test_block>,1
     action:

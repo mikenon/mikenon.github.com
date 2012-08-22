@@ -257,9 +257,9 @@ $(function() {
 			setJsonApiStatus('error', 'Please reload browser', false);
 			return false;
 		}
-		console.log('plugins/EasyBlocks/' + $("#inputFilename").val());
+		console.log('plugins/YAMP/' + $("#inputFilename").val());
 		console.log(fillFile());
-		api.call('setFileContents', ['plugins/EasyBlocks/' + $("#inputFilename").val(), fillFile()], function(data) {
+		api.call('setFileContents', ['plugins/YAMP/' + $("#inputFilename").val(), fillFile()], function(data) {
 			if(data.result == "success") {
 				setJsonApiStatus('success', $("#inputFilename").val() + ' Uploaded', false);
 			} else {

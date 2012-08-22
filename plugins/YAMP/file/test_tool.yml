@@ -1,6 +1,6 @@
 tool:
     name: Battle Tool
-    texture: http://dl.dropbox.com/u/79326363/Spout/EasyBlocks/example/test_item.png
+    texture: http://dl.dropbox.com/u/79326363/Spout/YAMP/example/test_item.png
     recipe: shaped 1,1,1 0,1,0 0,<test_item>,0 1
     furnace: 3,1
     action:

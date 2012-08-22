@@ -1,6 +1,6 @@
 block:
     name: Almost Stone
-    texture: http://dl.dropbox.com/u/79326363/Spout/EasyBlocks/example/test_block.png
+    texture: http://dl.dropbox.com/u/79326363/Spout/YAMP/example/test_block.png
     hardness: 1
     lightlevel: 6
     friction: 0.6
