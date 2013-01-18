@@ -83,7 +83,6 @@
 								Spout SP by Country
 							</a>
 						</li>
-						
 						<li class="nav-header">
 							Line
 						</li>
@@ -92,9 +91,8 @@
 						</li>
 					</ul>
 				</div>
-				<div class="span5">
-					 <p>Charts are fun, right? The charts are based on info about <a href="http://get.spout.org" target="_blank">Spoutcraft</a>.</p>
-					 <p>Please note: The data displayed here is likely outdated.</p>
+				<div id="visualization" class="span9" style="height: 600px;">
+
 				</div>
             </div>
 
@@ -104,5 +102,20 @@
                 <br>
             </footer>
         </div>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    	<script type="text/javascript">
+			google.load('visualization', '1', {packages: ['corechart']});
+    	</script>
+		<script type="text/javascript">
+			function drawVisualization() {
+				var data = google.visualization.arrayToDataTable([
+					['Country', 'Plays'],
+					['United States', 2182.82],['Unknown', 1701.24],['Germany', 715.97],['France', 611.42],['Poland', 610.9],['Russian Federation', 469.88],['United Kingdom', 332.75],['Thailand', 318.1],['Canada', 315.32],['Brazil', 271.65],['Australia', 263.56],['Italy', 256.73],['Lithuania', 226.04],['Korea', 212.8],['Netherlands', 155.57],['Sweden', 154.98],['Norway', 109.79],['Czech Republic', 99.32],['Belgium', 90],['Denmark', 81.53],['Saudi Arabia', 70.29],['Spain', 70.09],['Kazakhstan', 63.48],['Switzerland', 57.25],['Ukraine', 53.08],['Austria', 51.76],['Argentina', 46.43],['Finland', 29.41],['New Zealand', 26.76],['Portugal', 26.4],['Belarus', 23.5],['Ireland', 20.35],['Slovakia', 18.49],['Estonia', 15.84],['Romania', 15.68],['Philippines', 15.14],['Hungary', 13.8],['Israel', 13.02],['Singapore', 12.74],['China', 12.46],['South Africa', 9.19],['Mexico', 8.89],['Latvia', 8.77],['Chile', 8.25],['Malaysia', 7.45],['Taiwan', 7.23],['Turkey', 7.07],['Greece', 6.77],['Indonesia', 6.71],['Bulgaria', 6.11],['Luxembourg', 6.03],['Hong Kong', 5.85],['United Arab Emirates', 5.81],['Moldova', 5.69],['Japan', 5.49],['El Salvador', 4.87],['Kuwait', 4.43],['Slovenia', 3.89],['Croatia', 3.61],['Serbia', 3.29],['Puerto Rico', 2.96],['Egypt', 2.96],['Venezuela', 2.76],['Colombia', 2.2],['Iceland', 1.9],['Faroe Islands', 1.88],['Brunei Darussalam', 1.68],['Uruguay', 1.6],['Reunion', 1.56],['Malta', 1.5],['Viet Nam', 1.44],['Jersey', 1.22],['Cyprus', 1.14],['New Caledonia', 1.1],['Morocco', 1.08],['Paraguay', 0.9],['Peru', 0.84],['Costa Rica', 0.82],['Bosnia And Herzegovina', 0.76],['Dominican Republic', 0.68],['Qatar', 0.6],['India', 0.58],['Montenegro', 0.5],['Trinidad And Tobago', 0.5],['French Guiana', 0.46],['Saint Kitts And Nevis', 0.44],['Jordan', 0.4],['Bahamas', 0.4],['Guatemala', 0.38],['Uzbekistan', 0.34],['Guam', 0.32],['Azerbaijan', 0.32],['Bolivia', 0.3],['Georgia', 0.28],['Tunisia', 0.28],['Panama', 0.28],['Greenland', 0.26],['French Polynesia', 0.24],['Curacao', 0.24],['Macedonia', 0.24]
+				]);
+				new google.visualization.PieChart(document.getElementById('visualization')).
+				draw(data, {title:"Spoutcraft Single Player"});
+			}
+			google.setOnLoadCallback(drawVisualization);
+		</script>
     </body>
 </html>
